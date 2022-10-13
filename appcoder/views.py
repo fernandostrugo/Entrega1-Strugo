@@ -3,8 +3,8 @@ from django.shortcuts import render
 from appcoder.models import *
 
 def inicio(request):
-    return HttpResponse("Este es el inicio de nuestra app Agenda Familiar. Para acceder a la agenda agregue a la barra de direcciones /appcoder/listar_agenda. Para hacer un nuevo registro escriba /appcoder/crear/nombre/apellido/email/telefono/Año-Mes-Día (si el mes es marzo, escriba 3 en vez de 03)")
-    
+    return render(request, "appcoder/home.html")     
+
 def agenda(request):
     agendas= Familia.objects.all()
     #Si quiero listarlo por la terminal, usaria un HttpResponse y usaria lo que esta abajo
